@@ -1,0 +1,20 @@
+app:
+  name: "puregrade-auth-service"
+  version: "1.0.0"
+
+http:
+  port: "3000"
+
+grpc:
+  port: "50051"
+
+redis:
+  address: "redis:6379"
+  password: "password"
+
+kafka:
+  addresses:
+    - "localhost:29092"
+    - "localhost:29093"
+  topics:
+    newPosts: "newPosts"

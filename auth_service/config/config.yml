@@ -1,0 +1,19 @@
+app:
+  name: "puregrade-auth-service"
+  version: "1.0.0"
+
+http:
+  port: "8080"
+
+grpc:
+  port: "50051"
+
+redis:
+  address: "redis:6379"
+  password: "password"
+
+externalServiceAddresses:
+  userService: "localhost:4002"
+
+secrets:
+  jwtSecretKey: "MySecretKey"

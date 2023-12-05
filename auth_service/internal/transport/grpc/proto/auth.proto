@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = ".";
+
+message User {
+  string id = 1;
+	string username = 2;
+	string email = 3;
+	string password = 4;
+	string avatar = 5;
+	bool banned = 6;
+	string banReason = 7;
+	string status = 8;
+	repeated int64 followers = 9;
+	repeated int64 roles = 10;
+	int64 createdAt = 11;
+}
+
+service Auth {
+    rpc SingUp(SingUpRequest) returns (SingUpResponse) {}
+    rpc SingIn(SingInRequest) returns (SingInResponse) {}
+    rpc Refresh(RefreshRequest) returns (RefreshResponse) {}
+}
+
+message SingUpRequest {
+    User user = 1;
+}
+
+message SingUpResponse {
+    string access = 1;
+    string refresh = 2;
+}
+
+message SingInRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message SingInResponse {
+    string access = 1;
+    string refresh = 2;
+}
+
+message RefreshRequest {
+    string refresh = 1;
+}
+
+message RefreshResponse {
+    string access = 1;
+    string refresh = 2;
+}
+
+

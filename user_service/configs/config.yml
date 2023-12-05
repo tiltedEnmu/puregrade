@@ -1,0 +1,24 @@
+httpport: "8080"
+grpcport: "50051"
+
+jwtsecretkey: "MySecretKey123"
+
+redis:
+  host: "redis"
+  port: "6379"
+  password: "redispw4puregrade"
+
+postgres:
+  host: "pg"
+  port: "5432"
+  username: "puregradeuser"
+  password: "pgpw4puregrade"
+  dbname: "puregradedb"
+  sslmode: "disable" # or "enable"
+
+mongo:
+  host: "127.0.0.1"
+  port: "27017"
+  username: "mongouser"
+  password: "mongopassword"
+  db: "main"
